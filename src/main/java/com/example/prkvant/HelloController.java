@@ -6,12 +6,12 @@ import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
-import javafx.scene.control.ScrollBar;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 
@@ -66,6 +66,7 @@ public class HelloController {
     @FXML
     void initialize() {
         pane.translateYProperty().bind(scrollBar.valueProperty().multiply(-8));
+
         branchItem1.getChildren().addAll(leafItem1, leafItem2);
         branchItem2.getChildren().addAll(leafItem3, leafItem4);
         branchItem3.getChildren().addAll(leafItem5, leafItem6);
@@ -86,7 +87,6 @@ public class HelloController {
                 textArea6.setVisible(true);
         }
         });
-
         rootItem.getChildren().addAll(branchItem1,branchItem2,branchItem3);
         treeView.setRoot(rootItem);
     }
