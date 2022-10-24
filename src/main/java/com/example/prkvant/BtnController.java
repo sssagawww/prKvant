@@ -4,16 +4,18 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class BtnController {
-
+    public Stage newStage = new Stage();
     @FXML
     private ResourceBundle resources;
 
@@ -28,7 +30,7 @@ public class BtnController {
 
     @FXML
     void initialize() {
-        Stage newStage = new Stage();
+        FXMLLoader loader = new FXMLLoader();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("kvant.fxml"));
         Scene scene = null;
         try {
@@ -38,13 +40,12 @@ public class BtnController {
         }
         newStage.setTitle("Hello!");
         newStage.setScene(scene);
-        btnB.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                newStage.show();//??? можно сделать всё в одном fxml и просто по нажатию кнопки скрывать
-            }
-        });
-
+    }
+    public void buttonAction(ActionEvent actionEvent) {
+        newStage.show();
+        Node source = (Node) actionEvent.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 
 }

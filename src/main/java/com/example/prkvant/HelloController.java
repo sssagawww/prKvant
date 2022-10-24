@@ -6,13 +6,17 @@ import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 
 public class HelloController {
@@ -47,7 +51,7 @@ public class HelloController {
     @FXML
     private TextArea textArea6;
 
-    public TreeItem<String>[] treeItems = new TreeItem[6];
+  //  public TreeItem<String>[] treeItems = new TreeItem[6];
 
     public TreeItem<String> rootItem = new TreeItem<>("Глава 1. Введение");
     public TreeItem<String> branchItem1 = new TreeItem<>("Containers");
@@ -65,7 +69,8 @@ public class HelloController {
 
     @FXML
     void initialize() {
-        pane.translateYProperty().bind(scrollBar.valueProperty().multiply(-8));
+        pane.setOnScroll(event -> scrollEvent(event));
+        //pane.translateYProperty().bind(scrollBar.valueProperty().multiply(-8));
 
         branchItem1.getChildren().addAll(leafItem1, leafItem2);
         branchItem2.getChildren().addAll(leafItem3, leafItem4);
@@ -90,6 +95,13 @@ public class HelloController {
         rootItem.getChildren().addAll(branchItem1,branchItem2,branchItem3);
         treeView.setRoot(rootItem);
     }
+
+
+
+    public void scrollEvent(ScrollEvent event){
+        //pane.translateYProperty().bind(scrollBar.valueProperty().multiply(-8));
+    }
+
 
    /* void selectItem(){
         for (int i = 0; i <= treeItems.length; i++) {
