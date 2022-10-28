@@ -52,7 +52,6 @@ public class Raspisanie {
 
     @FXML
     void initialize() {
-        p2_1_1.setVisible(true);
         branchItem1_1.getChildren().addAll(leafItem1_1_1);
         branchItem2_1.getChildren().addAll(leafItem2_1_1, leafItem2_1_2, leafItem2_1_3);
 
