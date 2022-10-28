@@ -19,9 +19,9 @@ import java.util.Objects;
 
 public class Raspisanie {
 
-    public Image image211 = new Image("E:/IdeaProjects/prKvant/src/main/resources/com/example/prkvant/img1.jpg");
+    /*public Image image211 = new Image("E:/IdeaProjects/prKvant/src/main/resources/com/example/prkvant/img1.jpg");
     public Image image212 = new Image("E:/IdeaProjects/prKvant/src/main/resources/com/example/prkvant/img2.png");
-    public Image image213 = new Image("E:/IdeaProjects/prKvant/src/main/resources/com/example/prkvant/img3.jpg");
+    public Image image213 = new Image("E:/IdeaProjects/prKvant/src/main/resources/com/example/prkvant/img3.jpg");*/
 
     //public TreeItem<String>[] treeItems = new TreeItem[3];
 
@@ -52,7 +52,7 @@ public class Raspisanie {
 
     @FXML
     void initialize() {
-        //https://stackoverflow.com/questions/9006075/why-setvisible-doesnt-work
+        p2_1_1.setVisible(true);
         branchItem1_1.getChildren().addAll(leafItem1_1_1);
         branchItem2_1.getChildren().addAll(leafItem2_1_1, leafItem2_1_2, leafItem2_1_3);
 

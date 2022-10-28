@@ -9,15 +9,18 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TreeView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class BtnController {
-    public Stage newStage = new Stage();
     @FXML
     private ResourceBundle resources;
 
@@ -46,7 +49,7 @@ public class BtnController {
             Stage rasp = (Stage) btnR.getScene().getWindow();
             rasp.setResizable(false);
             Parent rootprofile1 = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("raspisanie.fxml")));
-            rasp.setTitle("Профиль");
+            rasp.setTitle("Расписание");
             rasp.setScene(new Scene(rootprofile1, 897, 589));
         }
     }
