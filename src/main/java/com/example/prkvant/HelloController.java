@@ -1,6 +1,8 @@
 package com.example.prkvant;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
@@ -12,6 +14,8 @@ import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
@@ -65,6 +69,8 @@ public class HelloController {
     public TreeItem<String> leafItem6 = new TreeItem<>("PieChart");
 
     @FXML
+    private Button backBtnB;
+    @FXML
     private TreeView treeView;
 
     @FXML
@@ -96,6 +102,15 @@ public class HelloController {
         treeView.setRoot(rootItem);
     }
 
+    public void setBackBtnB(ActionEvent event) throws IOException {
+        if (event.getSource()==backBtnB) {
+            Stage base = (Stage) backBtnB.getScene().getWindow();
+            base.setResizable(false);
+            Parent rootprofile = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("kvantPreview.fxml")));
+            base.setTitle("Универсальный помощник");
+            base.setScene(new Scene(rootprofile, 897, 589));
+        }
+    }
 
 
     public void scrollEvent(ScrollEvent event){

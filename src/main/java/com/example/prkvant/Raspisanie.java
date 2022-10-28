@@ -1,12 +1,21 @@
 package com.example.prkvant;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.Objects;
 
 public class Raspisanie {
 
@@ -29,6 +38,10 @@ public class Raspisanie {
     public TreeItem<String> leafItem2_1_3 = new TreeItem<>("День открытых дверей");
 
     @FXML
+    private Button backBtn;
+    @FXML
+    public static ImageView p1_1_1 = new ImageView();
+    @FXML
     public static ImageView p2_1_1 = new ImageView();
     @FXML
     public static ImageView p2_1_2 = new ImageView();
@@ -39,10 +52,6 @@ public class Raspisanie {
 
     @FXML
     void initialize() {
-        /*p2_1_1.setImage(image211);
-        p2_1_2.setImage(image212);
-        p2_1_3.setImage(image213);*/
-
         branchItem1_1.getChildren().addAll(leafItem1_1_1);
         branchItem2_1.getChildren().addAll(leafItem2_1_1, leafItem2_1_2, leafItem2_1_3);
 
@@ -73,5 +82,14 @@ public class Raspisanie {
         rootItem2.getChildren().addAll(branchItem2_1);
         rootItem1.getChildren().addAll(rootItem2);
         treeView.setRoot(rootItem1);
+    }
+    public void setBackBtn(ActionEvent event) throws IOException {
+        if (event.getSource()==backBtn) {
+            Stage base = (Stage) backBtn.getScene().getWindow();
+            base.setResizable(false);
+            Parent rootprofile = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("kvantPreview.fxml")));
+            base.setTitle("Универсальный помощник");
+            base.setScene(new Scene(rootprofile, 897, 589));
+        }
     }
 }
