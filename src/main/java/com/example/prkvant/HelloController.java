@@ -35,9 +35,6 @@ public class HelloController {
     private Pane pane;
 
     @FXML
-    private ScrollBar scrollBar;
-
-    @FXML
     private TextArea textArea1;
 
     @FXML
@@ -75,9 +72,6 @@ public class HelloController {
 
     @FXML
     void initialize() {
-        pane.setOnScroll(event -> scrollEvent(event));
-        pane.translateYProperty().bind(scrollBar.valueProperty().multiply(-8));
-
         branchItem1.getChildren().addAll(leafItem1, leafItem2);
         branchItem2.getChildren().addAll(leafItem3, leafItem4);
         branchItem3.getChildren().addAll(leafItem5, leafItem6);
@@ -86,18 +80,48 @@ public class HelloController {
             if (newValue != null && newValue == leafItem1) {
                 textArea1.setVisible(true);
                 textArea2.setVisible(false); //?????
+                textArea3.setVisible(false);
+                textArea4.setVisible(false);
+                textArea5.setVisible(false);
+                textArea6.setVisible(false);
             } else if (newValue != null && newValue == leafItem2) {
                 textArea2.setVisible(true);
+                textArea1.setVisible(false);
+                textArea3.setVisible(false);
+                textArea4.setVisible(false);
+                textArea5.setVisible(false);
+                textArea6.setVisible(false);
             } else if (newValue != null && newValue == leafItem3) {
                 textArea3.setVisible(true);
+                textArea1.setVisible(false);
+                textArea2.setVisible(false);
+                textArea4.setVisible(false);
+                textArea5.setVisible(false);
+                textArea6.setVisible(false);
             } else if (newValue != null && newValue == leafItem4) {
                 textArea4.setVisible(true);
+                textArea1.setVisible(false);
+                textArea2.setVisible(false);
+                textArea3.setVisible(false);
+                textArea5.setVisible(false);
+                textArea6.setVisible(false);
             } else if (newValue != null && newValue == leafItem5) {
                 textArea5.setVisible(true);
+                textArea1.setVisible(false);
+                textArea2.setVisible(false);
+                textArea3.setVisible(false);
+                textArea4.setVisible(false);
+                textArea6.setVisible(false);
             } else if (newValue != null && newValue == leafItem6) {
                 textArea6.setVisible(true);
+                textArea1.setVisible(false);
+                textArea2.setVisible(false);
+                textArea3.setVisible(false);
+                textArea4.setVisible(false);
+                textArea5.setVisible(false);
         }
         });
+
         rootItem.getChildren().addAll(branchItem1,branchItem2,branchItem3);
         treeView.setRoot(rootItem);
     }
@@ -112,24 +136,4 @@ public class HelloController {
         }
     }
 
-
-    public void scrollEvent(ScrollEvent event){
-        System.out.println("j;sfhewfuwghfuwge");
-        //scrollBar.setValue(8);
-    }
-
-
-   /* void selectItem(){
-        for (int i = 0; i <= treeItems.length; i++) {
-         treeView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-             if (newValue != null && newValue == treeItems[i]) {
-                 textArea.setVisible(true);
-             }
-         });
-        }
-    }
-
-    public TreeItem<String>[] getTreeItems() {
-        return treeItems;
-    }*/
 }
