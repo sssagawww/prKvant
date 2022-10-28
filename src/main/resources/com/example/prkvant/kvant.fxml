@@ -16,7 +16,7 @@
                <font>
                   <Font size="17.0" />
                </font></TextArea>
-            <TextArea fx:id="textArea2" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="2" visible="false" />
+            <TextArea fx:id="textArea2" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="2" />
             <TextArea fx:id="textArea3" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="3" visible="false" />
             <TextArea fx:id="textArea4" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="4" visible="false" />
             <TextArea fx:id="textArea5" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="5" visible="false" />
