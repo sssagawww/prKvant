@@ -2,6 +2,7 @@ package com.example.prkvant;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -9,6 +10,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -29,23 +31,23 @@ public class BtnController {
     private Button btnR;
 
     @FXML
-    void initialize() {
-        FXMLLoader loader = new FXMLLoader();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("kvant.fxml"));
-        Scene scene = null;
-        try {
-            scene = new Scene(fxmlLoader.load(),897, 589);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+    public void initialize(ActionEvent event) throws IOException {
+        if (event.getSource()==btnB) {
+            Stage base = (Stage) btnB.getScene().getWindow();
+            base.setResizable(false);
+            Parent rootprofile = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("kvant.fxml")));
+            base.setTitle("База знаний");
+            base.setScene(new Scene(rootprofile, 897, 589));
         }
-        newStage.setTitle("Hello!");
-        newStage.setScene(scene);
-    }
-    public void buttonAction(ActionEvent actionEvent) {
-        newStage.show();
-        Node source = (Node) actionEvent.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
     }
 
+    public void raspisanie(ActionEvent actionEvent) throws IOException {
+        if (actionEvent.getSource()==btnR) {
+            Stage rasp = (Stage) btnR.getScene().getWindow();
+            rasp.setResizable(false);
+            Parent rootprofile1 = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("raspisanie.fxml")));
+            rasp.setTitle("Профиль");
+            rasp.setScene(new Scene(rootprofile1, 897, 589));
+        }
+    }
 }

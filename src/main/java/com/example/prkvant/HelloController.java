@@ -51,7 +51,7 @@ public class HelloController {
     @FXML
     private TextArea textArea6;
 
-  //  public TreeItem<String>[] treeItems = new TreeItem[6];
+    //public TreeItem<String>[] treeItems = new TreeItem[6];
 
     public TreeItem<String> rootItem = new TreeItem<>("Глава 1. Введение");
     public TreeItem<String> branchItem1 = new TreeItem<>("Containers");
@@ -70,7 +70,7 @@ public class HelloController {
     @FXML
     void initialize() {
         pane.setOnScroll(event -> scrollEvent(event));
-        //pane.translateYProperty().bind(scrollBar.valueProperty().multiply(-8));
+        pane.translateYProperty().bind(scrollBar.valueProperty().multiply(-8));
 
         branchItem1.getChildren().addAll(leafItem1, leafItem2);
         branchItem2.getChildren().addAll(leafItem3, leafItem4);
@@ -99,7 +99,8 @@ public class HelloController {
 
 
     public void scrollEvent(ScrollEvent event){
-        //pane.translateYProperty().bind(scrollBar.valueProperty().multiply(-8));
+        System.out.println("j;sfhewfuwghfuwge");
+        //scrollBar.setValue(8);
     }
 
 
