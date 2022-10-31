@@ -52,5 +52,8 @@ public class BtnController {
             rasp.setTitle("Расписание");
             rasp.setScene(new Scene(rootprofile1, 897, 589));
         }
+        new Thread(() -> {
+
+        }).start();
     }
 }

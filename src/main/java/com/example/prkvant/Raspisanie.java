@@ -50,18 +50,30 @@ public class Raspisanie {
     @FXML
     private TreeView treeView;
 
+    /*class JThread extends Thread {
+        JThread(String name){
+            super(name);
+        }
+        public void run(){
+            System.out.println("работает");
+            });
+        }
+    }*/
+
     @FXML
     void initialize() {
+        //https://stackoverflow.com/questions/32349910/javafx-8-setvisible-is-blocked
         branchItem1_1.getChildren().addAll(leafItem1_1_1);
         branchItem2_1.getChildren().addAll(leafItem2_1_1, leafItem2_1_2, leafItem2_1_3);
 
+        //new JThread("JThread").start();
         treeView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             /*if (newValue != null && newValue == leafItem1_1_1) {
                 p1_1_1.setVisible(true);
                 p2_1_1.setVisible(false);
                 p2_1_2.setVisible(false);
                 p2_1_3.setVisible(false);
-            }*/ /*else*/ if (newValue != null && newValue == leafItem2_1_1) {
+            } else*/ if (newValue != null && newValue == leafItem2_1_1) {
                 //p1_1_1.setVisible(false);
                 p2_1_1.setVisible(true);
                 p2_1_2.setVisible(false);
