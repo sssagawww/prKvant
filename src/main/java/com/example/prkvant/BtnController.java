@@ -44,12 +44,6 @@ public class BtnController {
         }
     }
 
-    public void potok(){
-        new Thread(() -> {
-
-        }).start();
-    }
-
     public void raspisanie(ActionEvent actionEvent) throws IOException {
         if (actionEvent.getSource()==btnR) {
             Stage rasp = (Stage) btnR.getScene().getWindow();

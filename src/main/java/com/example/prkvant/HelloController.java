@@ -54,7 +54,7 @@ public class HelloController {
 
     //public TreeItem<String>[] treeItems = new TreeItem[6];
 
-    public TreeItem<String> rootItem = new TreeItem<>("Глава 1. Введение");
+    public TreeItem<String> rootItem = new TreeItem<>("Глава 1. Основы");
     public TreeItem<String> branchItem1 = new TreeItem<>("Containers");
     public TreeItem<String> branchItem2 = new TreeItem<>("Controls");
     public TreeItem<String> branchItem3 = new TreeItem<>("Charts");
