@@ -23,8 +23,6 @@ public class Raspisanie {
     public Image image212 = new Image("E:/IdeaProjects/prKvant/src/main/resources/com/example/prkvant/img2.png");
     public Image image213 = new Image("E:/IdeaProjects/prKvant/src/main/resources/com/example/prkvant/img3.jpg");*/
 
-    //public TreeItem<String>[] treeItems = new TreeItem[3];
-
     public TreeItem<String> rootItem1 = new TreeItem<>("Расписание");
     public TreeItem<String> branchItem1_1 = new TreeItem<>("Java");
     public TreeItem<String> leafItem1_1_1 = new TreeItem<>("Java 2.1");
