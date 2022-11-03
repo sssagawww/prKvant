@@ -23,28 +23,42 @@
                <viewport>
                   <Rectangle2D height="452.0" minX="607.0" minY="1.0" width="607.0" />
                </viewport></ImageView>
-            <ImageView fx:id="p2_1_1" fitHeight="452.0" fitWidth="607.0" visible="false">
-               <viewport>
-                  <Rectangle2D height="452.0" width="607.0" />
-               </viewport>
-               <image>
-                  <Image url="@img1.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="p2_1_2" visible="false">
-               <viewport>
-                  <Rectangle2D height="452.0" width="607.0" />
-               </viewport>
-               <image>
-                  <Image url="@img2.png" />
-               </image></ImageView>
-            <ImageView fx:id="p2_1_3" visible="false">
-               <viewport>
-                  <Rectangle2D height="457.0" width="607.0" />
-               </viewport>
-               <image>
-                  <Image url="@img3.jpg" />
-               </image></ImageView>
+            <Pane fx:id="imagePane1" layoutY="3.0" prefHeight="452.0" prefWidth="607.0" visible="false">
+               <children>
+                  <ImageView fx:id="p2_1_1" fitHeight="452.0" fitWidth="574.0" layoutX="17.0">
+                     <viewport>
+                        <Rectangle2D height="452.0" width="607.0" />
+                     </viewport>
+                     <image>
+                        <Image url="@img1.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="imagePane2" layoutY="-2.0" prefHeight="457.0" prefWidth="607.0" visible="false">
+               <children>
+                  <ImageView fx:id="p2_1_2" layoutY="3.0">
+                     <viewport>
+                        <Rectangle2D height="452.0" width="607.0" />
+                     </viewport>
+                     <image>
+                        <Image url="@img2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="imagePane3" layoutX="-3.0" layoutY="-1.0" prefHeight="452.0" prefWidth="613.0" visible="false">
+               <children>
+                  <ImageView fx:id="p2_1_3" layoutX="3.0" layoutY="8.0">
+                     <viewport>
+                        <Rectangle2D height="457.0" width="607.0" />
+                     </viewport>
+                     <image>
+                        <Image url="@img3.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
          </children>
       </Pane>
       <TreeView fx:id="treeView" layoutX="41.0" layoutY="87.0" prefHeight="479.0" prefWidth="200.0" />

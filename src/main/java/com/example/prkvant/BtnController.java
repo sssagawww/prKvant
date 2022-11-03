@@ -38,7 +38,7 @@ public class BtnController {
         if (event.getSource()==btnB) {
             Stage base = (Stage) btnB.getScene().getWindow();
             base.setResizable(false);
-            Parent rootprofile = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("kvant.fxml")));
+            Parent rootprofile = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("kvant (1).fxml")));
             base.setTitle("База знаний");
             base.setScene(new Scene(rootprofile, 897, 589));
         }
