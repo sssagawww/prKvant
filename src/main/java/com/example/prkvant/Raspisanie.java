@@ -38,6 +38,12 @@ public class Raspisanie {
     public TreeItem<String> leafItem2_1_3 = new TreeItem<>("День открытых дверей");
 
     @FXML
+    private Pane imagePane1;
+    @FXML
+    private Pane imagePane2;
+    @FXML
+    private Pane imagePane3;
+    @FXML
     private Button backBtn;
     @FXML
     public static ImageView p1_1_1 = new ImageView();
@@ -76,19 +82,19 @@ public class Raspisanie {
                 p2_1_3.setVisible(false);
             } else*/ if (newValue != null && newValue == leafItem2_1_1) {
                 //p1_1_1.setVisible(false);
-                p2_1_1.setVisible(true);
-                p2_1_2.setVisible(false);
-                p2_1_3.setVisible(false);
+                imagePane1.setVisible(true);
+                imagePane2.setVisible(false);
+                imagePane3.setVisible(false);
             } else if (newValue != null && newValue == leafItem2_1_2) {
                 //p1_1_1.setVisible(false);
-                p2_1_1.setVisible(false);
-                p2_1_2.setVisible(true);
-                p2_1_3.setVisible(false);
+                imagePane1.setVisible(false);
+                imagePane2.setVisible(true);
+                imagePane3.setVisible(false);
             } else if (newValue != null && newValue == leafItem2_1_3) {
                 //p1_1_1.setVisible(false);
-                p2_1_1.setVisible(false);
-                p2_1_2.setVisible(false);
-                p2_1_3.setVisible(true);
+                imagePane1.setVisible(false);
+                imagePane2.setVisible(false);
+                imagePane3.setVisible(true);
             }
         });
         rootItem1.getChildren().addAll(branchItem1_1);
