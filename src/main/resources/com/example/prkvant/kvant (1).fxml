@@ -12,89 +12,12 @@
    <children>
       <Pane fx:id="pane" layoutX="260.0" layoutY="90.0" prefHeight="452.0" prefWidth="607.0">
          <children>
-            <TextArea fx:id="textArea1" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="javafx.scene.layout.AnchorPane позволяет позиционировать вложеные элементы вдоль одной из сторон контейнера.&#10;AnchorPane имеет два конструктора:&#10;&#10;AnchorPane(): создает пустой объект AnchorPane&#10;&#10;AnchorPane(Node... children): создает объект AnchorPane, заполненный узлами children&#10;&#10;При использовании второго конструкора или при обычном добавлении узлов AnchorPane следует учитывать, что все добавленные узлы по умолчанию будут располагать в левом верхнем углу. И чтобы наспроить расположение, мы можем использовать один из статических методов AnchorPane. Основные методы класса:&#10;&#10;static Double getBottomAnchor​(Node child): возвращает положение узла child относительно нижнего края контейнера&#10;&#10;static Double getLeftAnchor​(Node child): возвращает положение узла child относительно левого края контейнера&#10;&#10;static Double getRightAnchor​(Node child): возвращает положение узла child относительно правого края контейнера&#10;&#10;static Double getTopAnchor​(Node child): возвращает положение узла child относительно верхнего края&#10;&#10;static void setBottomAnchor​(Node child, Double value): устанавливает отступ value для узла child относительно нижнего края контейнера&#10;&#10;static void setLeftAnchor​(Node child, Double value): устанавливает отступ value для узла child относительно левого края контейнера&#10;&#10;static void setRightAnchor(Node child, Double value): устанавливает отступ value для узла child относительно правого края контейнера&#10;&#10;static void setTopAnchor​(Node child, Double value): устанавливает отступ value для узла child относительно верхнего края контейнера" visible="false" wrapText="true">
-               <font>
-                  <Font size="17.0" />
-               </font></TextArea>
-            <TextArea fx:id="textArea2" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="Контейнер javafx.scene.layout.BorderPane позволяет прижать вложенные элементы управления к одной из сторон контейнера: по верхнему, нижнему, левому или правому краю или расположить по центру.&#10;Класс BorderPane имеет следующие конструкторы: &#10;&#10;BorderPane(): создает пустой контейнер BorderPane &#10;&#10;BorderPane​(Node center): создает контейнер BorderPane, в котором по центру располагается элемент center &#10;&#10;BorderPane​(Node center, Node top, Node right, Node bottom, Node left): создает контейнер BorderPane, в котором по центру располагается элемент center, по верхнему краю - элемент top, по правому краю - элемент right, по нижнему краю - элемент bottom и по нижнему краю - узел left &#10;Некоторые из основных методов BorderPane:&#10;&#10;
-
-Node getBottom​(): получает узел, который расположен по нижнему краю BorderPane&#10;&#10;
-
-void setBottom​(Node child): располагает узел по нижнему краю&#10;&#10;
-
-Node getCenter​(): получает узел, который расположен по центру&#10;&#10;
-
-void setCenter(Node child): располагает узел по центру&#10;&#10;
-
-Node getLeft(): получает узел, который расположен по левому краю&#10;&#10;
-
-void setLeft​(Node child): располагает узел по левому краю&#10;&#10;
-
-Node getRight(): получает узел, который расположен по правому краю&#10;&#10;
-
-void setRight(Node child): располагает узел по правому краю&#10;&#10;
-
-Node getTop(): получает узел, который расположен по верхнему краю&#10;&#10;
-
-void setTop​(Node child): располагает узел по верхнему краю&#10;&#10;
-
-static Pos getAlignment(Node child): получает параметры выравнивания элемента child в виде объекта Pos&#10;&#10;
-
-static void setAlignment​(Node child, Pos value): задает выравнивание для элемента child&#10;&#10;
-
-static void setMargin​(Node child, Insets value): устанавливает для элемента child внешние отступы от границ контейнера&#10;&#10;
-
-static Insets getMargin​(Node child): получает внешние отступы элемента от границ контейнера&#10;
-
-При размещении элементов, следует учитывать, что для каждого элемента задается по умолчанию определенное выравнивание:&#10;&#10;
-
-top: Pos.TOP_LEFT&#10;&#10;
-
-bottom: Pos.BOTTOM_LEFT&#10;&#10;
-
-left: Pos.TOP_LEFT&#10;&#10;
-
-right: Pos.TOP_RIGHT&#10;&#10;
-
-center: Pos.CENTER" wrapText="true" visible="false"/>
-            <TextArea fx:id="textArea3" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="Наиболее часто используемые элементы управления в JavaFX - это, без сомнения, кнопки.&#10; Кнопки представлены классом javafx.scene.control.Button и позволяют по нажатию выполнять некоторые действия. Класс Button унаследован от классов ButtonBase, Labeled, Region, Control, Parent и Node.&#10; JavaFX позволяет создавать самые разнообразные кнопки: с текстом, графикой, и тем и другим, с различными стилями.&#10;
-
-Класс Button имеет три конструктора:&#10;&#10;
-
-Button(): создает кнопку без надписи&#10;&#10;
-
-Button​(String text): создает кнопку с определенной надписью&#10;&#10;
-
-Button​(String text, Node graphic): создает кнопку с определенной надписью и иконкой&#10;&#10;
-
-Ключевой возможностью кнопки является способность реагировать на нажатия пользователей и по нажтию выполнять некоторое действие. Для обработки нажатий в базовом классе ButtonBase определен метод setOnAction(), который устанавливает обработчик нажатия." wrapText="true" visible="false" />
-            <TextArea fx:id="textArea4" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="Одина из наиболее часто используемых элементов управления в JavaFX - это метки.&#10; Метки представлены классы javafx.scene.control.Label, и их задача - вывод текстовой информации. Класс Label унаследован от Labeled, Region, Control, Parent и Node.&#10; JavaFX позволяет создавать самые разнообразные метки: с текстом, графикой, и тем и другим, с различными стилями.&#10;
-
-Класс Label имеет три конструктора:&#10;&#10;
-
-Label(): создает метку без надписи&#10;&#10;
-
-Label​(String text): создает метку с определенной надписью&#10;&#10;
-
-Label(String text, Node graphic): создает метку с определенной надписью и иконкой" wrapText="true" visible="false" />
-            <TextArea fx:id="textArea6" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="PieChart — это представление значений в виде фрагментов круга с разными цветами. Эти фрагменты помечаются, а значения, соответствующие каждому фрагменту, представляются на диаграмме. В JavaFX круговая диаграмма представлена классом с именем PieChart. Круговая диаграмма представлена классом javafx.scene.chart.PieChart.&#10;
-
-Создав экземпляр этого класса, можно создать узел PieChart в JavaFX.&#10;
-
-Этот класс имеет 5 свойств:&#10;&#10;
-
-По часовой стрелке − Это логический оператор; при установке этого оператора true фрагменты данных в круговых диаграммах будут располагаться по часовой стрелке, начиная с начального угла круговой диаграммы.&#10;&#10;
-
-data − Представляет объект ObservableList, который содержит данные круговой диаграммы.&#10;&#10;
-
-labelLineLength − Целочисленный оператор, представляющий длину линий, соединяющих метки и фрагменты круговой диаграммы.&#10;&#10;
-
-labelsVisible − Это логический оператор; при установке этого оператора true будут нарисованы метки для круговых диаграмм. По умолчанию для этого оператора установлено значение true.&#10;&#10;
-
-startAngle − Это оператор двойного типа, который представляет угол для начала первого куска пирога.&#10;&#10;
-
-Чтобы создать круговую диаграмму, подготовьте объект ObservableList. После подготовки объекта ObservableList передайте его в качестве аргумента конструктору класса PieChart." wrapText="true" visible="false" />
-            <TextArea fx:id="textArea5" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="AreaChart используется для рисования диаграмм на основе областей. Он строит область между заданной серией точек и осью. В общем, эта диаграмма используется для сравнения двух величин. &#10; В JavaFX она представлена классом javafx.scene.chart.AreaChart. &#10; Создав экземпляр этого класса, можно создать узел AreaChart в JavaFX." wrapText="true" visible="false" />
+            <TextArea fx:id="textArea1" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="javafx.scene.layout.AnchorPane позволяет позиционировать вложеные элементы вдоль одной из сторон контейнера.&#10;AnchorPane имеет два конструктора:&#10;&#10;AnchorPane(): создает пустой объект AnchorPane&#10;&#10;AnchorPane(Node... children): создает объект AnchorPane, заполненный узлами children&#10;&#10;При использовании второго конструкора или при обычном добавлении узлов AnchorPane следует учитывать, что все добавленные узлы по умолчанию будут располагать в левом верхнем углу. И чтобы наспроить расположение, мы можем использовать один из статических методов AnchorPane. Основные методы класса:&#10;&#10;static Double getBottomAnchor​(Node child): возвращает положение узла child относительно нижнего края контейнера&#10;&#10;static Double getLeftAnchor​(Node child): возвращает положение узла child относительно левого края контейнера&#10;&#10;static Double getRightAnchor​(Node child): возвращает положение узла child относительно правого края контейнера&#10;&#10;static Double getTopAnchor​(Node child): возвращает положение узла child относительно верхнего края&#10;&#10;static void setBottomAnchor​(Node child, Double value): устанавливает отступ value для узла child относительно нижнего края контейнера&#10;&#10;static void setLeftAnchor​(Node child, Double value): устанавливает отступ value для узла child относительно левого края контейнера&#10;&#10;static void setRightAnchor(Node child, Double value): устанавливает отступ value для узла child относительно правого края контейнера&#10;&#10;static void setTopAnchor​(Node child, Double value): устанавливает отступ value для узла child относительно верхнего края контейнера" visible="false" wrapText="true" />
+            <TextArea fx:id="textArea2" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="Контейнер javafx.scene.layout.BorderPane позволяет прижать вложенные элементы управления к одной из сторон контейнера: по верхнему, нижнему, левому или правому краю или расположить по центру.&#10;Класс BorderPane имеет следующие конструкторы: &#10;&#10;BorderPane(): создает пустой контейнер BorderPane &#10;&#10;BorderPane​(Node center): создает контейнер BorderPane, в котором по центру располагается элемент center &#10;&#10;BorderPane​(Node center, Node top, Node right, Node bottom, Node left): создает контейнер BorderPane, в котором по центру располагается элемент center, по верхнему краю - элемент top, по правому краю - элемент right, по нижнему краю - элемент bottom и по нижнему краю - узел left &#10;Некоторые из основных методов BorderPane:&#10;&#10;  Node getBottom​(): получает узел, который расположен по нижнему краю BorderPane&#10;&#10;  void setBottom​(Node child): располагает узел по нижнему краю&#10;&#10;  Node getCenter​(): получает узел, который расположен по центру&#10;&#10;  void setCenter(Node child): располагает узел по центру&#10;&#10;  Node getLeft(): получает узел, который расположен по левому краю&#10;&#10;  void setLeft​(Node child): располагает узел по левому краю&#10;&#10;  Node getRight(): получает узел, который расположен по правому краю&#10;&#10;  void setRight(Node child): располагает узел по правому краю&#10;&#10;  Node getTop(): получает узел, который расположен по верхнему краю&#10;&#10;  void setTop​(Node child): располагает узел по верхнему краю&#10;&#10;  static Pos getAlignment(Node child): получает параметры выравнивания элемента child в виде объекта Pos&#10;&#10;  static void setAlignment​(Node child, Pos value): задает выравнивание для элемента child&#10;&#10;  static void setMargin​(Node child, Insets value): устанавливает для элемента child внешние отступы от границ контейнера&#10;&#10;  static Insets getMargin​(Node child): получает внешние отступы элемента от границ контейнера&#10;  При размещении элементов, следует учитывать, что для каждого элемента задается по умолчанию определенное выравнивание:&#10;&#10;  top: Pos.TOP_LEFT&#10;&#10;  bottom: Pos.BOTTOM_LEFT&#10;&#10;  left: Pos.TOP_LEFT&#10;&#10;  right: Pos.TOP_RIGHT&#10;&#10;  center: Pos.CENTER" visible="false" wrapText="true" />
+            <TextArea fx:id="textArea3" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="Наиболее часто используемые элементы управления в JavaFX - это, без сомнения, кнопки.&#10; Кнопки представлены классом javafx.scene.control.Button и позволяют по нажатию выполнять некоторые действия. Класс Button унаследован от классов ButtonBase, Labeled, Region, Control, Parent и Node.&#10; JavaFX позволяет создавать самые разнообразные кнопки: с текстом, графикой, и тем и другим, с различными стилями.&#10;  Класс Button имеет три конструктора:&#10;&#10;  Button(): создает кнопку без надписи&#10;&#10;  Button​(String text): создает кнопку с определенной надписью&#10;&#10;  Button​(String text, Node graphic): создает кнопку с определенной надписью и иконкой&#10;&#10;  Ключевой возможностью кнопки является способность реагировать на нажатия пользователей и по нажтию выполнять некоторое действие. Для обработки нажатий в базовом классе ButtonBase определен метод setOnAction(), который устанавливает обработчик нажатия." visible="false" wrapText="true" />
+            <TextArea fx:id="textArea4" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="Одина из наиболее часто используемых элементов управления в JavaFX - это метки.&#10; Метки представлены классы javafx.scene.control.Label, и их задача - вывод текстовой информации. Класс Label унаследован от Labeled, Region, Control, Parent и Node.&#10; JavaFX позволяет создавать самые разнообразные метки: с текстом, графикой, и тем и другим, с различными стилями.&#10;  Класс Label имеет три конструктора:&#10;&#10;  Label(): создает метку без надписи&#10;&#10;  Label​(String text): создает метку с определенной надписью&#10;&#10;  Label(String text, Node graphic): создает метку с определенной надписью и иконкой" visible="false" wrapText="true" />
+            <TextArea fx:id="textArea6" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="PieChart — это представление значений в виде фрагментов круга с разными цветами. Эти фрагменты помечаются, а значения, соответствующие каждому фрагменту, представляются на диаграмме. В JavaFX круговая диаграмма представлена классом с именем PieChart. Круговая диаграмма представлена классом javafx.scene.chart.PieChart.&#10;  Создав экземпляр этого класса, можно создать узел PieChart в JavaFX.&#10;  Этот класс имеет 5 свойств:&#10;&#10;  По часовой стрелке − Это логический оператор; при установке этого оператора true фрагменты данных в круговых диаграммах будут располагаться по часовой стрелке, начиная с начального угла круговой диаграммы.&#10;&#10;  data − Представляет объект ObservableList, который содержит данные круговой диаграммы.&#10;&#10;  labelLineLength − Целочисленный оператор, представляющий длину линий, соединяющих метки и фрагменты круговой диаграммы.&#10;&#10;  labelsVisible − Это логический оператор; при установке этого оператора true будут нарисованы метки для круговых диаграмм. По умолчанию для этого оператора установлено значение true.&#10;&#10;  startAngle − Это оператор двойного типа, который представляет угол для начала первого куска пирога.&#10;&#10;  Чтобы создать круговую диаграмму, подготовьте объект ObservableList. После подготовки объекта ObservableList передайте его в качестве аргумента конструктору класса PieChart." visible="false" wrapText="true" />
+            <TextArea fx:id="textArea5" editable="false" layoutX="9.0" layoutY="5.0" prefHeight="441.0" prefWidth="590.0" text="AreaChart используется для рисования диаграмм на основе областей. Он строит область между заданной серией точек и осью. В общем, эта диаграмма используется для сравнения двух величин. &#10; В JavaFX она представлена классом javafx.scene.chart.AreaChart. &#10; Создав экземпляр этого класса, можно создать узел AreaChart в JavaFX." visible="false" wrapText="true" />
          </children>
       </Pane>
       <Pane layoutX="2.0" prefHeight="97.0" prefWidth="875.0" style="-fx-background-color: #C6F8DD;">
