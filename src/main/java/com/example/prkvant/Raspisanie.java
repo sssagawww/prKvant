@@ -25,11 +25,8 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Raspisanie {
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
+    public ResourceBundle resources;
+    public URL location;
 
     /*public Image image211 = new Image("E:/IdeaProjects/prKvant/src/main/resources/com/example/prkvant/img1.jpg");
     public Image image212 = new Image("E:/IdeaProjects/prKvant/src/main/resources/com/example/prkvant/img2.png");
@@ -113,11 +110,12 @@ public class Raspisanie {
         rootItem2.getChildren().addAll(branchItem2_1);
         rootItem1.getChildren().addAll(rootItem2);
         treeView.setRoot(rootItem1);
-        //setTableColumn(location, resources);
+        setTableColumn(location, resources);
     }
-    public void setTableColumn(URL location, ResourceBundle resource){
+    public void setTableColumn(URL url, ResourceBundle resourceBundle){
         col1.setCellValueFactory(new PropertyValueFactory<TableRasp, String>("column"));
         table.setItems(list);
+        //table.setColumns().add(col1);
     }
     public void setBackBtn(ActionEvent event) throws IOException {
         if (event.getSource()==backBtn) {

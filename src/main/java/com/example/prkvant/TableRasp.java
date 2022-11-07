@@ -5,7 +5,7 @@ public class TableRasp {
     public TableRasp(String column){
         this.column = column;
     }
-    public String getColumn(){
+    /*public String getColumn(){
         return getColumn();
-    }
+    }*/
 }
