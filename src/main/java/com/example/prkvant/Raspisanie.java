@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +14,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -70,19 +73,26 @@ public class Raspisanie {
     private TableColumn<TableRasp, String> col1;
     @FXML
     private Pane tablePane;
+    @FXML
+    private TextArea zam1;
 
     ObservableList<TableRasp> list = FXCollections.observableArrayList(
-            new TableRasp("1"),
-            new TableRasp("2"),
-            new TableRasp("3"),
-            new TableRasp("4")
+            new TableRasp("Понедельник"),
+            new TableRasp("Вторник"),
+            new TableRasp("Среда"),
+            new TableRasp("Четверг"),
+            new TableRasp("Пятница"),
+            new TableRasp("Суббота"),
+            new TableRasp("Воскресенье")
     );
     @FXML
     void initialize() {
-        //https://www.youtube.com/watch?v=3s8s0vyfLV8
+        //https://ru.stackoverflow.com/questions/764746
+        //https://www.youtube.com/watch?v=ancUwZnPmLw
+        //https://code.makery.ch/ru/library/javafx-tutorial/part3/
+        selectRow();
         branchItem1_1.getChildren().addAll(leafItem1_1_1);
         branchItem2_1.getChildren().addAll(leafItem2_1_1, leafItem2_1_2, leafItem2_1_3);
-
         treeView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null && newValue == leafItem1_1_1) {
                 tablePane.setVisible(true);
@@ -113,9 +123,18 @@ public class Raspisanie {
         setTableColumn(location, resources);
     }
     public void setTableColumn(URL url, ResourceBundle resourceBundle){
+        //table.getItems().add(new TableRasp("1"));
         col1.setCellValueFactory(new PropertyValueFactory<TableRasp, String>("column"));
         table.setItems(list);
-        //table.setColumns().add(col1);
+    }
+    private void selectRow() {
+        table.refresh();
+        table.setOnMousePressed(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent mouseEvent) {
+                        zam1.setText("qwdqdqwfq");
+                    }
+        });
     }
     public void setBackBtn(ActionEvent event) throws IOException {
         if (event.getSource()==backBtn) {
