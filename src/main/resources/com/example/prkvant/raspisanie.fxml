@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="589.0" prefWidth="897.0" style="-fx-background-color: #C6F8DD;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prkvant.Raspisanie">
+<AnchorPane prefHeight="589.0" prefWidth="897.0" style="-fx-background-color: #C6F8DD;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prkvant.Raspisanie">
    <children>
       <Text layoutX="339.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Расписание">
          <font>
@@ -63,12 +63,11 @@
             </Pane>
             <Pane fx:id="tablePane" layoutX="1.0" layoutY="-3.0" prefHeight="457.0" prefWidth="607.0">
                <children>
-                  <TableView fx:id="table" layoutX="-1.0" layoutY="1.0" prefHeight="395.0" prefWidth="607.0">
+                  <TableView fx:id="table" layoutX="-1.0" layoutY="1.0" prefHeight="457.0" prefWidth="607.0">
                     <columns>
                       <TableColumn fx:id="col1" prefWidth="606.0" text="Ноябрь" />
                     </columns>
                   </TableView>
-                  <Button layoutX="460.0" layoutY="418.0" mnemonicParsing="false" text="Button" />
                </children></Pane>
          </children>
       </Pane>
