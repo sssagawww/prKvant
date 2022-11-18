@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.image.Image?>
@@ -67,13 +68,14 @@
                       <TableColumn fx:id="col3" prefWidth="202.0" reorderable="false" text="Время" />
                     </columns>
                   </TableView>
-                  <Button fx:id="submit" layoutX="359.0" layoutY="350.0" mnemonicParsing="false" onAction="#submit" text="Обновить таблицу" />
+                  <Button fx:id="submit" layoutX="372.0" layoutY="297.0" mnemonicParsing="false" onAction="#submitAction" text="Обновить таблицу" />
                   <TextField fx:id="timeInp" layoutX="112.0" layoutY="406.0" />
                   <TextField fx:id="dateInp" layoutX="112.0" layoutY="297.0" />
                   <TextField fx:id="dowInp" layoutX="112.0" layoutY="350.0" />
                   <Text layoutX="81.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата" />
                   <Text layoutX="34.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="День Недели" />
                   <Text layoutX="70.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Время" />
+                  <TextArea fx:id="txArea" layoutX="331.0" layoutY="336.0" prefHeight="77.0" prefWidth="200.0" />
                </children></Pane>
          </children>
       </Pane>

@@ -1,0 +1,1 @@
+TextArea[id=txArea, styleClass=text-input text-area]

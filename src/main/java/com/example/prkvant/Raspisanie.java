@@ -14,10 +14,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class Raspisanie {
     public ResourceBundle resources;
@@ -77,6 +78,13 @@ public class Raspisanie {
     private Button submit;
     @FXML
     private Pane tablePane;
+    @FXML
+    private TextArea txArea;
+
+    public BufferedReader br = null;
+    public File file = new File("Val.txt");
+    public PrintWriter pw;
+    public String line;
 
     ObservableList<TableRasp2> list = FXCollections.observableArrayList(
             new TableRasp2("4.11",  "Пятница", "18:35"),
@@ -125,19 +133,30 @@ public class Raspisanie {
     }
 
     @FXML
-    void submit(ActionEvent event) {
-            ObservableList<TableRasp2> currentData = table.getItems();
-            String currentDate = dateInp.getText();
-
-            for (TableRasp2 tableRasp : currentData) {
-                if (tableRasp.getColumn().equals(currentDate)) {
-                    tableRasp.setDow(dowInp.getText());
-                    tableRasp.setTime(timeInp.getText());
-                    table.setItems(currentData);
-                    table.refresh();
-                    break;
+    void submitAction(ActionEvent event) throws IOException {
+        System.out.println("работает");
+        ObservableList<TableRasp2> currentData = table.getItems();
+        String currentDate = dateInp.getText();
+        for (TableRasp2 tableRasp : currentData) {
+            if (tableRasp.getColumn().equals(currentDate)) {
+                //txArea.setText();
+                line = (String.valueOf(txArea)); // !!!
+                pw = new PrintWriter(file);
+                pw.println(line);
+                br = new BufferedReader(new FileReader("Val.txt"));
+                while ((line = br.readLine()) != null){
+                    pw.println(":)");
                 }
+                br.close();
+                pw.close();
+
+                tableRasp.setDow(dowInp.getText());
+                tableRasp.setTime(timeInp.getText());
+                table.setItems(currentData);
+                table.refresh();
+                break;
             }
+        }
     }
 
     @FXML
