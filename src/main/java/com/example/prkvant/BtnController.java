@@ -48,7 +48,7 @@ public class BtnController {
         if (actionEvent.getSource()==btnR) {
             Stage rasp = (Stage) btnR.getScene().getWindow();
             rasp.setResizable(false);
-            Parent rootprofile1 = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("raspisanie2.fxml"))); // !!! фиксить
+            Parent rootprofile1 = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("raspisanie2.fxml")));
             rasp.setTitle("Расписание");
             rasp.setScene(new Scene(rootprofile1, 897, 589));
         }
