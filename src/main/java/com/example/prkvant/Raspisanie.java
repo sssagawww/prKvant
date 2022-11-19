@@ -1,31 +1,24 @@
 package com.example.prkvant;
 
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.Pane;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class Raspisanie {
     public ResourceBundle resources;
@@ -44,10 +37,10 @@ public class Raspisanie {
     //public TreeItem<String> mainRoot = new TreeItem<>("не нужная строка");
 
     public TreeItem<String> rootItem2 = new TreeItem<>("События");
-    public TreeItem<String> branchItem2_1 = new TreeItem<>("Октябрь");
-    public TreeItem<String> leafItem2_1_1 = new TreeItem<>("Октябрь - месяц науки");
-    public TreeItem<String> leafItem2_1_2 = new TreeItem<>("Маскарад");
-    public TreeItem<String> leafItem2_1_3 = new TreeItem<>("День открытых дверей");
+    public TreeItem<String> branchItem2_1 = new TreeItem<>("Ноябрь");
+    public TreeItem<String> leafItem2_1_1 = new TreeItem<>("Музыкальный листопад");
+    public TreeItem<String> leafItem2_1_2 = new TreeItem<>("Комплимент осени");
+    public TreeItem<String> leafItem2_1_3 = new TreeItem<>("Ноябрь - месяц искусств");
 
     @FXML
     private Pane imagePane1;
@@ -68,31 +61,47 @@ public class Raspisanie {
     @FXML
     private TreeView treeView;
     @FXML
-    private TableView<TableRasp> table;
+    private TableView<TableRasp2> table;
     @FXML
-    private TableColumn<TableRasp, String> col1;
+    private TableColumn<TableRasp2, String> col1;
+    @FXML
+    private TableColumn<TableRasp2, String> col2;
+    @FXML
+    private TableColumn<TableRasp2, String> col3;
+    @FXML
+    private TextField dateInp;
+    @FXML
+    private TextField dowInp;
+    @FXML
+    private TextField timeInp;
+    @FXML
+    private Button submit;
     @FXML
     private Pane tablePane;
     @FXML
-    private TextArea zam1;
+    private TextArea txArea;
 
-    ObservableList<TableRasp> list = FXCollections.observableArrayList(
-            new TableRasp("Понедельник"),
-            new TableRasp("Вторник"),
-            new TableRasp("Среда"),
-            new TableRasp("Четверг"),
-            new TableRasp("Пятница"),
-            new TableRasp("Суббота"),
-            new TableRasp("Воскресенье")
+    public BufferedReader br = null;
+    public File file = new File("Val.txt");
+    public PrintWriter pw;
+    public String line;
+
+    ObservableList<TableRasp2> list = FXCollections.observableArrayList(
+            new TableRasp2("4.11",  "Пятница", "18:35"),
+            new TableRasp2("7.11",  "Понедельник", "18:35"),
+            new TableRasp2("11.11", "Пятница", "18:35"),
+            new TableRasp2("14.11", "Понедельник", "18:35"),
+            new TableRasp2("18.11", "Пятница", "18:35"),
+            new TableRasp2("21.11", "Понедельник", "18:35"),
+            new TableRasp2("25.11", "Пятница", "18:35"),
+            new TableRasp2("28.11", "Понедельник", "18:35")
     );
     @FXML
     void initialize() {
-        //https://ru.stackoverflow.com/questions/764746
-        //https://www.youtube.com/watch?v=ancUwZnPmLw
-        //https://code.makery.ch/ru/library/javafx-tutorial/part3/
-        selectRow();
+        //https://www.youtube.com/watch?v=3s8s0vyfLV8
         branchItem1_1.getChildren().addAll(leafItem1_1_1);
         branchItem2_1.getChildren().addAll(leafItem2_1_1, leafItem2_1_2, leafItem2_1_3);
+
         treeView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null && newValue == leafItem1_1_1) {
                 tablePane.setVisible(true);
@@ -122,19 +131,48 @@ public class Raspisanie {
         treeView.setRoot(rootItem1);
         setTableColumn(location, resources);
     }
-    public void setTableColumn(URL url, ResourceBundle resourceBundle){
-        //table.getItems().add(new TableRasp("1"));
-        col1.setCellValueFactory(new PropertyValueFactory<TableRasp, String>("column"));
-        table.setItems(list);
+
+    @FXML
+    void submitAction(ActionEvent event) throws IOException {
+        System.out.println("работает");
+        ObservableList<TableRasp2> currentData = table.getItems();
+        String currentDate = dateInp.getText();
+        for (TableRasp2 tableRasp : currentData) {
+            if (tableRasp.getColumn().equals(currentDate)) {
+                //txArea.setText();
+                line = (String.valueOf(txArea)); // !!!
+                pw = new PrintWriter(file);
+                pw.println(line);
+                br = new BufferedReader(new FileReader("Val.txt"));
+                while ((line = br.readLine()) != null){
+                    pw.println(":)");
+                }
+                br.close();
+                pw.close();
+
+                tableRasp.setDow(dowInp.getText());
+                tableRasp.setTime(timeInp.getText());
+                table.setItems(currentData);
+                table.refresh();
+                break;
+            }
+        }
     }
-    private void selectRow() {
-        table.refresh();
-        table.setOnMousePressed(new EventHandler<MouseEvent>() {
-                    @Override
-                    public void handle(MouseEvent mouseEvent) {
-                        zam1.setText("qwdqdqwfq");
-                    }
-        });
+
+    @FXML
+    void rowClicked (MouseEvent event){
+        TableRasp2 tableRaspclick = table.getSelectionModel().getSelectedItem();
+        dateInp.setText(String.valueOf(tableRaspclick.getColumn()));
+        dowInp.setText(String.valueOf(tableRaspclick.getDow()));
+        timeInp.setText(String.valueOf(tableRaspclick.getTime()));
+    }
+
+    public void setTableColumn(URL url, ResourceBundle resourceBundle){
+        col1.setCellValueFactory(new PropertyValueFactory<TableRasp2, String>("column"));
+        col2.setCellValueFactory(new PropertyValueFactory<TableRasp2, String>("dow"));
+        col3.setCellValueFactory(new PropertyValueFactory<TableRasp2, String>("time"));
+        table.setItems(list);
+        //table.setColumns().add(col1);
     }
     public void setBackBtn(ActionEvent event) throws IOException {
         if (event.getSource()==backBtn) {
