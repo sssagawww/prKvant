@@ -12,13 +12,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
 public class Raspisanie {
     public ResourceBundle resources;
@@ -42,6 +42,8 @@ public class Raspisanie {
     private Pane imagePane3;
     @FXML
     private Button backBtn;
+    @FXML
+    private Button update;
     @FXML
     public static ImageView p1_1_1 = new ImageView();
     @FXML
@@ -67,18 +69,25 @@ public class Raspisanie {
     @FXML
     private TextField timeInp;
     @FXML
-    private Button submit;
-    @FXML
     private Pane tablePane;
     @FXML
     private TextArea txArea;
-    /*@FXML
-    private TextArea txArea2;*/
-
-    public BufferedReader br = null;
-    public File file = new File("Val.txt");
-    public PrintWriter pw;
-    public String line;
+    @FXML
+    private TextArea txArea2;
+    @FXML
+    private TextArea txArea3;
+    @FXML
+    private TextArea txArea4;
+    @FXML
+    private TextArea txArea5;
+    @FXML
+    private TextArea txArea6;
+    @FXML
+    private TextArea txArea7;
+    @FXML
+    private TextArea txArea8;
+    @FXML
+    private Text text;
 
     ObservableList<TableRasp2> list = FXCollections.observableArrayList(
             new TableRasp2("4.11",  "Пятница", "18:35"),
@@ -132,6 +141,80 @@ public class Raspisanie {
         String currentDate = dateInp.getText();
         for (TableRasp2 tableRasp : currentData) {
             if (tableRasp.getColumn().equals(currentDate)) {
+                text.setVisible(false);
+                if (tableRasp.getColumn().equals("4.11")) {
+                    txArea.setVisible(true);
+                    txArea2.setVisible(false);
+                    txArea3.setVisible(false);
+                    txArea4.setVisible(false);
+                    txArea5.setVisible(false);
+                    txArea6.setVisible(false);
+                    txArea7.setVisible(false);
+                    txArea8.setVisible(false);
+                } else if (tableRasp.getColumn().equals("7.11")) {
+                    txArea2.setVisible(true);
+                    txArea.setVisible(false);
+                    txArea3.setVisible(false);
+                    txArea4.setVisible(false);
+                    txArea5.setVisible(false);
+                    txArea6.setVisible(false);
+                    txArea7.setVisible(false);
+                    txArea8.setVisible(false);
+                } else if (tableRasp.getColumn().equals("11.11")) {
+                    txArea3.setVisible(true);
+                    txArea.setVisible(false);
+                    txArea2.setVisible(false);
+                    txArea4.setVisible(false);
+                    txArea5.setVisible(false);
+                    txArea6.setVisible(false);
+                    txArea7.setVisible(false);
+                    txArea8.setVisible(false);
+                } else if (tableRasp.getColumn().equals("14.11")) {
+                    txArea4.setVisible(true);
+                    txArea.setVisible(false);
+                    txArea3.setVisible(false);
+                    txArea2.setVisible(false);
+                    txArea5.setVisible(false);
+                    txArea6.setVisible(false);
+                    txArea7.setVisible(false);
+                    txArea8.setVisible(false);
+                } else if (tableRasp.getColumn().equals("18.11")) {
+                    txArea5.setVisible(true);
+                    txArea.setVisible(false);
+                    txArea3.setVisible(false);
+                    txArea4.setVisible(false);
+                    txArea2.setVisible(false);
+                    txArea6.setVisible(false);
+                    txArea7.setVisible(false);
+                    txArea8.setVisible(false);
+                } else if (tableRasp.getColumn().equals("21.11")) {
+                    txArea6.setVisible(true);
+                    txArea.setVisible(false);
+                    txArea3.setVisible(false);
+                    txArea4.setVisible(false);
+                    txArea5.setVisible(false);
+                    txArea2.setVisible(false);
+                    txArea7.setVisible(false);
+                    txArea8.setVisible(false);
+                } else if (tableRasp.getColumn().equals("25.11")) {
+                    txArea7.setVisible(true);
+                    txArea.setVisible(false);
+                    txArea3.setVisible(false);
+                    txArea4.setVisible(false);
+                    txArea5.setVisible(false);
+                    txArea6.setVisible(false);
+                    txArea2.setVisible(false);
+                    txArea8.setVisible(false);
+                } else if (tableRasp.getColumn().equals("28.11")){
+                    txArea8.setVisible(true);
+                    txArea.setVisible(false);
+                    txArea3.setVisible(false);
+                    txArea4.setVisible(false);
+                    txArea5.setVisible(false);
+                    txArea6.setVisible(false);
+                    txArea7.setVisible(false);
+                    txArea2.setVisible(false);
+                }
                /* pw = new PrintWriter(file);
                 br = new BufferedReader(new FileReader("Val.txt"));
                 if (line == null) {
@@ -144,7 +227,8 @@ public class Raspisanie {
                     txArea.setText(line);
                 }
                 pw.close();
-                br.close();*/
+                br.close();
+                // -------------
                 pw = new PrintWriter(file);
                 pw.println(txArea.getText());
                 pw.close();
@@ -152,9 +236,16 @@ public class Raspisanie {
                 while ((line = br.readLine()) != null){
                    System.out.println(":)");
                 }
-                br.close();
-
-                tableRasp.setDow(dowInp.getText());
+                br.close();*/
+            }
+        }
+    }
+    @FXML
+    void updateAction(ActionEvent actionEvent) throws IOException{
+        ObservableList<TableRasp2> currentData = table.getItems();
+        String currentDate = dateInp.getText();
+        for (TableRasp2 tableRasp : currentData) {
+            if (tableRasp.getColumn().equals(currentDate)){
                 tableRasp.setTime(timeInp.getText());
                 table.setItems(currentData);
                 table.refresh();
@@ -180,7 +271,6 @@ public class Raspisanie {
         col2.setCellValueFactory(new PropertyValueFactory<TableRasp2, String>("dow"));
         col3.setCellValueFactory(new PropertyValueFactory<TableRasp2, String>("time"));
         table.setItems(list);
-        //table.setColumns().add(col1);
     }
     public void setBackBtn(ActionEvent event) throws IOException {
         if (event.getSource()==backBtn) {

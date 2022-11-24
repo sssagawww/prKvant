@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="589.0" prefWidth="897.0" style="-fx-background-color: #C6F8DD;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prkvant.Raspisanie">
+<AnchorPane prefHeight="589.0" prefWidth="897.0" style="-fx-background-color: #C6F8DD;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prkvant.Raspisanie">
     <children>
         <Text layoutX="339.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Расписание (Ноябрь)">
             <font>
@@ -23,44 +23,45 @@
         </Text>
         <Pane fx:id="pane" layoutX="270.0" layoutY="100.0" prefHeight="452.0" prefWidth="607.0">
             <children>
-                <Pane fx:id="imagePane1" layoutY="3.0" prefHeight="452.0" prefWidth="607.0" visible="false">
+                <Pane fx:id="imagePane1" prefHeight="452.0" prefWidth="607.0" visible="false">
                     <children>
-                        <ImageView fx:id="p2_1_1" fitHeight="452.0" fitWidth="574.0" layoutX="17.0">
+                        <ImageView fx:id="p2_1_1" fitHeight="452.0" fitWidth="607.0">
                             <viewport>
                                 <Rectangle2D height="452.0" width="607.0" />
                             </viewport>
                             <image>
-                                <Image url="@img2.1.jpg" />
+                                <Image url="@pane11.jpg" />
                             </image>
                         </ImageView>
                     </children>
                 </Pane>
-                <Pane fx:id="imagePane2" layoutY="-2.0" prefHeight="457.0" prefWidth="607.0" visible="false">
+                <Pane fx:id="imagePane2" prefHeight="452.0" prefWidth="607.0" visible="false">
                     <children>
-                        <ImageView fx:id="p2_1_2" layoutY="3.0">
+                        <ImageView fx:id="p2_1_2">
                             <viewport>
                                 <Rectangle2D height="452.0" width="607.0" />
                             </viewport>
                             <image>
-                                <Image url="@img2.2.jpg" />
+                                <Image url="@pane22.jpg" />
                             </image>
                         </ImageView>
                     </children>
                 </Pane>
-                <Pane fx:id="imagePane3" layoutX="-3.0" layoutY="-1.0" prefHeight="452.0" prefWidth="613.0" visible="false">
+                <Pane fx:id="imagePane3" prefHeight="452.0" prefWidth="607.0" visible="false">
                     <children>
-                        <ImageView fx:id="p2_1_3" layoutX="3.0" layoutY="8.0">
+                        <ImageView fx:id="p2_1_3">
                             <viewport>
                                 <Rectangle2D height="457.0" width="607.0" />
                             </viewport>
                             <image>
-                                <Image url="@img2.3.jpg" />
+                                <Image url="@pane33.jpg" />
                             </image>
                         </ImageView>
                     </children>
                 </Pane>
-                <Pane fx:id="tablePane" layoutX="1.0" layoutY="-3.0" prefHeight="457.0" prefWidth="607.0">
+                <Pane fx:id="tablePane" layoutX="1.0" layoutY="-3.0" prefHeight="479.0" prefWidth="607.0" visible="false">
                     <children>
+                  <Text fx:id="text" layoutX="317.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Для открытия текстового поля нажмите &quot;Загрузить&quot;" textAlignment="CENTER" wrappingWidth="295.42578125" />
                         <TableView fx:id="table" layoutX="-1.0" layoutY="1.0" onMouseClicked="#rowClicked" prefHeight="260.0" prefWidth="607.0">
                             <columns>
                                 <TableColumn fx:id="col1" prefWidth="202.0" reorderable="false" text="Дата" />
@@ -68,19 +69,36 @@
                                 <TableColumn fx:id="col3" prefWidth="202.0" reorderable="false" text="Время" />
                             </columns>
                         </TableView>
-                        <Button fx:id="submit" layoutX="373.0" layoutY="415.0" mnemonicParsing="false" onAction="#submitAction" text="Обновить данные" />
+                        <Button fx:id="submit" layoutX="396.0" layoutY="419.0" mnemonicParsing="false" onAction="#submitAction" text="Загрузить" />
                         <TextField fx:id="timeInp" layoutX="112.0" layoutY="406.0" />
                         <TextField fx:id="dateInp" editable="false" layoutX="112.0" layoutY="297.0" />
-                        <TextField fx:id="dowInp" layoutX="112.0" layoutY="350.0" />
+                        <TextField fx:id="dowInp" editable="false" layoutX="112.0" layoutY="350.0" />
                         <Text layoutX="81.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата" />
                         <Text layoutX="34.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="День Недели" />
                         <Text layoutX="70.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Время" />
-                        <TextArea fx:id="txArea" layoutX="330.0" layoutY="308.0" prefHeight="93.0" prefWidth="200.0" />
                   <Text layoutX="394.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Заметки">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Text>
+                  <Pane fx:id="paneZam" layoutX="314.0" layoutY="296.0" prefHeight="116.0" prefWidth="233.0">
+                     <children>
+                        <Text layoutX="69.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Выберите день">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                              <TextArea fx:id="txArea" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
+                        <TextArea fx:id="txArea2" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
+                        <TextArea fx:id="txArea3" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
+                        <TextArea fx:id="txArea4" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
+                        <TextArea fx:id="txArea5" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
+                        <TextArea fx:id="txArea6" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
+                        <TextArea fx:id="txArea7" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
+                        <TextArea fx:id="txArea8" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
+                     </children>
+                  </Pane>
+                  <Button fx:id="update" layoutX="151.0" layoutY="445.0" mnemonicParsing="false" onAction="#updateAction" text="Обновить" />
                     </children></Pane>
             </children>
         </Pane>

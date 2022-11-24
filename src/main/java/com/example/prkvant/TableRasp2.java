@@ -1,7 +1,5 @@
 package com.example.prkvant;
 
-//юзается
-
 public class TableRasp2 {
     private String column;
     private String dow;
