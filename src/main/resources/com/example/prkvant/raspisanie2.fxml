@@ -59,7 +59,7 @@
                         </ImageView>
                     </children>
                 </Pane>
-                <Pane fx:id="tablePane" layoutX="1.0" layoutY="-3.0" prefHeight="479.0" prefWidth="607.0" visible="false">
+                <Pane fx:id="tablePane" layoutX="1.0" layoutY="-3.0" prefHeight="479.0" prefWidth="607.0">
                     <children>
                   <Text fx:id="text" layoutX="317.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Для открытия текстового поля нажмите &quot;Загрузить&quot;" textAlignment="CENTER" wrappingWidth="295.42578125" />
                         <TableView fx:id="table" layoutX="-1.0" layoutY="1.0" onMouseClicked="#rowClicked" prefHeight="260.0" prefWidth="607.0">
@@ -88,14 +88,14 @@
                               <Font size="14.0" />
                            </font>
                         </Text>
-                              <TextArea fx:id="txArea" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
-                        <TextArea fx:id="txArea2" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
-                        <TextArea fx:id="txArea3" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
-                        <TextArea fx:id="txArea4" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
-                        <TextArea fx:id="txArea5" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
-                        <TextArea fx:id="txArea6" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
-                        <TextArea fx:id="txArea7" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
-                        <TextArea fx:id="txArea8" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" />
+                              <TextArea fx:id="txArea" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" wrapText="true" />
+                        <TextArea fx:id="txArea2" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" wrapText="true" />
+                        <TextArea fx:id="txArea3" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" wrapText="true" />
+                        <TextArea fx:id="txArea4" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" wrapText="true" />
+                        <TextArea fx:id="txArea5" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" wrapText="true" />
+                        <TextArea fx:id="txArea6" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" wrapText="true" />
+                        <TextArea fx:id="txArea7" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" wrapText="true" />
+                        <TextArea fx:id="txArea8" layoutX="17.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" visible="false" wrapText="true" />
                      </children>
                   </Pane>
                   <Button fx:id="update" layoutX="151.0" layoutY="445.0" mnemonicParsing="false" onAction="#updateAction" text="Обновить" />
