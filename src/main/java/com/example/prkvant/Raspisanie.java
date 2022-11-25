@@ -30,9 +30,9 @@ public class Raspisanie {
 
     public TreeItem<String> rootItem2 = new TreeItem<>("События");
     public TreeItem<String> branchItem2_1 = new TreeItem<>("Ноябрь");
-    public TreeItem<String> leafItem2_1_1 = new TreeItem<>("Музыкальный листопад");
+    public TreeItem<String> leafItem2_1_1 = new TreeItem<>("Ноябрь - месяц искусств");
     public TreeItem<String> leafItem2_1_2 = new TreeItem<>("Комплимент осени");
-    public TreeItem<String> leafItem2_1_3 = new TreeItem<>("Ноябрь - месяц искусств");
+    public TreeItem<String> leafItem2_1_3 = new TreeItem<>("Музыкальный листопад");
 
     @FXML
     private Pane imagePane1;
